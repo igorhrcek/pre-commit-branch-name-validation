@@ -11,7 +11,7 @@ repos:
   - repo: https://github.com/igorhrcek/pre-commit-branch-name-validation
     rev: v1.0.0
     hooks:
-      - id: pre-commit-branch-name-validation
+      - id: pre-commit-branch-validation
         stages: [pre-push, post-checkout]
         args: [] # optional: list of allowed branch types, issue prefixes and maximum length of branch description
 ```
