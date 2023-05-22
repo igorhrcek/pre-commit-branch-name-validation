@@ -83,8 +83,8 @@ def main(argv=[]):
 Branch name start with one of the below branch types, followed by a slash,
 followed by one of the below issue tpes, followed by slash and optional description:{Colors.RESTORE}
 
-Branch types: {" ".join(branch_types_list(args.branch_types))}
-Issue types: {" ".join(branch_types_list(args.issue_prefixes))}
+Branch types: {" ".join(branch_types_list(DEFAULT_BRANCH_TYPES))}
+Issue types: {" ".join(branch_types_list(DEFAULT_ISSUE_PREFIXES))}
 
 {Colors.YELLOW}Good examples:{Colors.RESTORE}
 feature/issue-47/code-styling-improvements
@@ -188,7 +188,7 @@ def is_branch_name_valid(input, branch_types=[], issue_prefixes=[], description_
 
     pattern = f"^({regex_branch_types(branch_types)}){regex_delimiter()}({regex_issue_prefixes(issue_prefixes)}){regex_issue_numbers()}{regex_description(description_length)}"
     regex = re.compile(pattern, re.DOTALL)
-    print(pattern)
+
     return bool(regex.match(input))
 
 
