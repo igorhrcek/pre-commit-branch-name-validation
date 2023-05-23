@@ -4,4 +4,4 @@
   language: python
   description: Checks branch name against set rules
   always_run: true
-  stages: [pre-push, post-checkout]
+  stages: [post-commit, post-checkout]
